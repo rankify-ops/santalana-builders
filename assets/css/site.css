@@ -337,9 +337,10 @@ h1, h2, h3, h4 {
 .utility a { transition: color var(--t-fast); }
 .utility a:hover { color: var(--head-strong); }
 .utility__item { display: inline-flex; align-items: center; gap: 8px; }
+/* No top bar on mobile: phone and email are already in the bottom Call bar
+   and the menu, and the licence line has its own strip under the hero. */
 @media (max-width: 860px) {
-  .utility__licence { display: none; }
-  .utility__inner { justify-content: center; }
+  .utility { display: none; }
 }
 
 .site-header {
