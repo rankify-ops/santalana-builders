@@ -1714,3 +1714,30 @@ body.nav-open .dock { display: none; }
 
 /* In-page links land below the sticky header rather than under it. */
 section[id], #enquire { scroll-margin-top: 100px; }
+
+/* Floating dock stays out of the way while the hero's own buttons are on
+   screen, and slides in once they have scrolled past. Gated on .js-reveal so
+   the dock is still shown if the script never runs. */
+.js-reveal .dock {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 300ms ease, transform 400ms cubic-bezier(.16, 1, .3, 1),
+              visibility 0s linear 400ms;
+}
+.js-reveal .dock.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  pointer-events: auto;
+  transition: opacity 300ms ease, transform 400ms cubic-bezier(.16, 1, .3, 1),
+              visibility 0s;
+}
+@media (max-width: 720px) {
+  .js-reveal .dock { transform: translateY(100%); }
+  .js-reveal .dock.is-visible { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .dock, .js-reveal .dock.is-visible { transition: none; }
+}

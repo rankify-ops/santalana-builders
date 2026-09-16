@@ -137,6 +137,25 @@
     onScroll();
   }
 
+  /* ---------- Floating dock ----------
+     Hidden while the hero's own buttons are on screen; shown once they have
+     scrolled off the top. Pages without a hero CTA just show it. */
+  var dock = document.querySelector('.dock');
+  var heroCta = document.querySelector('.hero__cta');
+  if (dock) {
+    if (heroCta) {
+      // Visible once the bottom of the hero buttons has gone above the viewport.
+      var syncDock = function () {
+        dock.classList.toggle('is-visible', heroCta.getBoundingClientRect().bottom <= 0);
+      };
+      window.addEventListener('scroll', syncDock, { passive: true });
+      window.addEventListener('resize', syncDock);
+      syncDock();
+    } else {
+      dock.classList.add('is-visible');
+    }
+  }
+
   /* ---------- Reveal on scroll ---------- */
   var reveals = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window) ||
