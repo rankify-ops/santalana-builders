@@ -226,8 +226,60 @@ h1, h2, h3, h4 {
 .btn--ghost { border-color: var(--outline); color: var(--ink); }
 .btn--ghost:hover { border-color: var(--ink); background: var(--ink); color: var(--white); }
 
-.btn--ghost-light { border-color: rgba(255,255,255,.38); color: #fff; }
-.btn--ghost-light:hover { background: #fff; color: #0a0a0a; }
+/* Frosted glass, built the way the Rankify glass is elsewhere: the blur is
+   paired with a saturation boost so colour behind comes through instead of
+   greying out, an inset highlight lights the top rim, and a layered shadow
+   gives it depth. Tint, text and shadow strength are variables so the same
+   button reads on a dark band and, in the light theme, on a white section. */
+.btn--glass {
+  --glass-tint: 255, 255, 255;
+  --glass-ink: #fff;
+  --glass-shadow: 0, 0, 0;
+  --glass-shadow-a: .28;
+  --glass-shadow-a-hover: .36;
+  --glass-rim: .38;
+  color: var(--glass-ink);
+  background: linear-gradient(135deg,
+    rgba(var(--glass-tint), .18) 0%,
+    rgba(var(--glass-tint), .06) 100%);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  backdrop-filter: blur(20px) saturate(1.6);
+  border-color: rgba(var(--glass-tint), .28);
+  box-shadow:
+    0 8px 32px rgba(var(--glass-shadow), var(--glass-shadow-a)),
+    inset 0 1px 0 rgba(255, 255, 255, var(--glass-rim)),
+    inset 0 -1px 0 rgba(255, 255, 255, .06);
+  transition: background var(--t-fast), border-color var(--t-fast),
+              box-shadow var(--t-med), transform var(--t-fast);
+}
+.btn--glass:hover {
+  background: linear-gradient(135deg,
+    rgba(var(--glass-tint), .27) 0%,
+    rgba(var(--glass-tint), .1) 100%);
+  border-color: rgba(var(--glass-tint), .46);
+  box-shadow:
+    0 12px 40px rgba(var(--glass-shadow), var(--glass-shadow-a-hover)),
+    inset 0 1px 0 rgba(255, 255, 255, calc(var(--glass-rim) + .17)),
+    inset 0 -1px 0 rgba(255, 255, 255, .08);
+  transform: translateY(-1px);
+}
+.btn--glass:active { transform: translateY(0); }
+
+/* Light theme on a white section: white glass would disappear, so tint it
+   dark. The hero is a dark band in both themes and keeps the light glass. */
+:root[data-theme="light"] .section .btn--glass {
+  --glass-tint: 10, 10, 10;
+  --glass-ink: #0a0a0a;
+  --glass-shadow: 10, 10, 10;
+  --glass-shadow-a: .1;
+  --glass-shadow-a-hover: .16;
+  --glass-rim: .7;
+}
+
+/* No backdrop-filter support: lean on a firmer tint so it still reads. */
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .btn--glass { background: rgba(var(--glass-tint), .16); }
+}
 
 .btn--wide { width: 100%; }
 
@@ -458,7 +510,17 @@ h1, h2, h3, h4 {
   color: rgba(255,255,255,.8);
   max-width: 54ch;
 }
-.hero__cta { display: flex; flex-wrap: wrap; gap: 14px; }
+/* The two hero buttons fill the copy column: an equal-width pair where both
+   labels fit side by side, each full width once they don't. The column minimum
+   is the width the longer, nowrap label needs, so a button can never be
+   squeezed narrower than its own text. min(..., 100%) stops that minimum from
+   forcing overflow on a very narrow phone. */
+.hero__cta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  gap: 12px;
+}
+.hero__cta .btn { width: 100%; padding-inline: 20px; }
 
 /* Credential chips under the hero CTAs */
 .hero__proof {
@@ -733,7 +795,7 @@ h1, h2, h3, h4 {
    ========================================================================== */
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1px;
   background: var(--pearl);
   border: 1px solid var(--pearl);
@@ -775,7 +837,7 @@ h1, h2, h3, h4 {
    ========================================================================== */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr));
   gap: clamp(16px, 2vw, 28px);
 }
 .project {
@@ -874,7 +936,7 @@ h1, h2, h3, h4 {
    ========================================================================== */
 .pillars {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: clamp(28px, 3.5vw, 52px);
 }
 .pillar { display: flex; flex-direction: column; gap: 13px; }
@@ -1255,9 +1317,20 @@ h1, h2, h3, h4 {
 .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
 @media (max-width: 420px) { .choices { grid-template-columns: 1fr; } }
 
-.choice__input {
+/* Scoped under .choices on purpose. A bare .choice__input loses to
+   `.field input { width: 100% }` on specificity, which made these hidden radios
+   285px wide and pushed the contact page past the edge of a small phone. The
+   padding and border are zeroed too: with border-box sizing, the inherited
+   field padding alone would hold a "1px" input at over 30px. Kept at opacity 0
+   rather than display:none so the radios stay focusable by keyboard. */
+.choices { position: relative; }
+.choices .choice__input {
   position: absolute;
+  top: 0; left: 0;
   width: 1px; height: 1px;
+  padding: 0; margin: 0; border: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
   opacity: 0;
   pointer-events: none;
 }
