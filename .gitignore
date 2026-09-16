@@ -1,0 +1,13 @@
+# Local preview server config, not part of the site
+.claude/
+
+# Working files: photo contact sheet used to map images to projects
+_reference/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+.vscode/
+.idea/
