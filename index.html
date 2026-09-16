@@ -17,12 +17,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script>
-/* Resolve a stored theme choice before first paint, so switching cannot flash
-   the other theme on load. Kept inline and tiny for that reason. */
-(function(){try{var t=localStorage.getItem('slb-theme');
-if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();
-</script>
 <link rel="stylesheet" href="assets/css/site.css">
 
 <script type="application/ld+json">
@@ -79,10 +73,10 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
 
     <nav class="nav" id="primaryNav" aria-label="Primary">
       <a class="nav__link" href="index.html" aria-current="page">Home</a>
-      <a class="nav__link" href="projects.html">Projects</a>
-      <a class="nav__link" href="services.html">Services</a>
-      <a class="nav__link" href="about.html">About</a>
-      <a class="nav__link" href="contact.html">Contact</a>
+      <a class="nav__link" href="#projects">Projects</a>
+      <a class="nav__link" href="#services">Services</a>
+      <a class="nav__link" href="#about">About</a>
+      <a class="nav__link" href="#enquire">Contact</a>
     </nav>
 
     <div class="header-actions">
@@ -90,7 +84,7 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
         0421 258 240
       </a>
-      <a class="btn btn--solid" href="#enquire">Start your build</a>
+      <a class="btn btn--solid" href="#enquire">Start your build <svg class="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Menu">
         <span></span><span></span>
       </button>
@@ -108,17 +102,17 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
   </div>
   <nav class="wrap navpanel__body" aria-label="Mobile">
         <a class="nav__link" style="--i:0" href="index.html" aria-current="page">Home</a>
-        <a class="nav__link" style="--i:1" href="projects.html">Projects</a>
-        <a class="nav__link" style="--i:2" href="services.html">Services</a>
-        <a class="nav__link" style="--i:3" href="about.html">About</a>
-        <a class="nav__link" style="--i:4" href="contact.html">Contact</a>
+        <a class="nav__link" style="--i:1" href="#projects">Projects</a>
+        <a class="nav__link" style="--i:2" href="#services">Services</a>
+        <a class="nav__link" style="--i:3" href="#about">About</a>
+        <a class="nav__link" style="--i:4" href="#enquire">Contact</a>
   </nav>
   <div class="wrap navpanel__foot">
     <div class="navpanel__contact">
       <a href="tel:+61421258240"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg> 0421 258 240</a>
       <a href="mailto:stefan@santalana.com.au"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg> stefan@santalana.com.au</a>
     </div>
-    <a class="btn btn--light btn--wide" href="contact.html">Request a consultation</a>
+    <a class="btn btn--light btn--wide" href="#enquire">Request a consultation <svg class="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
   </div>
 </div>
 
@@ -144,8 +138,8 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
       </p>
 
       <div class="hero__cta">
-        <a class="btn btn--light" href="#enquire">Request a consultation</a>
-        <a class="btn btn--glass" href="projects.html">View our projects</a>
+        <a class="btn btn--light" href="#enquire">Request a consultation <svg class="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+        <a class="btn btn--glass" href="#projects">View our projects <svg class="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
       </div>
 
       <ul class="hero__proof">
@@ -259,7 +253,7 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
 </section>
 
 <!-- ======================= Who we are ======================= -->
-<section class="section">
+<section class="section" id="about">
   <div class="wrap split">
     <div class="split__copy reveal">
       <p class="eyebrow">Who we are</p>
@@ -284,13 +278,6 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
       <div class="signature">
         <div class="signature__name">Stefan DiRienzo</div>
         <div class="signature__role">Director / Builder</div>
-      </div>
-
-      <div class="stack-cta">
-        <a class="link-arrow" href="about.html">
-          More about Santa'lana
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-        </a>
       </div>
     </div>
 
@@ -332,11 +319,6 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
         <h3>New homes &amp; custom builds</h3>
         <p>Architecturally designed residences built to the highest standard, with premium finishes and seamless indoor-outdoor integration.</p>
         <ul class="card__list"><li>Luxury homes</li><li>Knock-down rebuild</li><li>Tight-access sites</li></ul>
-        <div class="card__foot">
-          <a class="link-arrow" href="services.html#new-homes">Learn more
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
       </article>
 
       <article class="card">
@@ -346,11 +328,6 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
         <h3>Duplex &amp; multi-dwelling</h3>
         <p>Side-by-side and dual-occupancy developments that maximise a site's value without compromising on design or liveability.</p>
         <ul class="card__list"><li>Dual occupancy</li><li>Townhouses</li><li>Developments</li></ul>
-        <div class="card__foot">
-          <a class="link-arrow" href="services.html#duplex">Learn more
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
       </article>
 
       <article class="card">
@@ -360,11 +337,6 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
         <h3>Renovations &amp; extensions</h3>
         <p>Full-scale renovations and rear extensions that blend heritage character with contemporary luxury and open-plan living.</p>
         <ul class="card__list"><li>Rear extensions</li><li>Second storey</li><li>Full refurbishment</li></ul>
-        <div class="card__foot">
-          <a class="link-arrow" href="services.html#renovations">Learn more
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
       </article>
 
       <article class="card">
@@ -374,11 +346,6 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
         <h3>Office &amp; shop fit-outs</h3>
         <p>Commercial fit-outs delivered to programme. Workplaces and retail spaces finished to the same standard as our homes.</p>
         <ul class="card__list"><li>Office fit-out</li><li>Retail &amp; hospitality</li><li>Refurbishment</li></ul>
-        <div class="card__foot">
-          <a class="link-arrow" href="services.html#commercial">Learn more
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
       </article>
 
       <article class="card">
@@ -388,11 +355,6 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
         <h3>Design &amp; build</h3>
         <p>One team from first sketch to handover. We coordinate design, documentation, permits and construction under a single point of contact.</p>
         <ul class="card__list"><li>Concept to completion</li><li>Permits</li><li>Fixed-price contract</li></ul>
-        <div class="card__foot">
-          <a class="link-arrow" href="services.html#design-build">Learn more
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
       </article>
 
       <article class="card">
@@ -402,11 +364,6 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
         <h3>Project management</h3>
         <p>Our refined project management system keeps trades, timelines and budget aligned, and keeps you informed at every stage.</p>
         <ul class="card__list"><li>Programme control</li><li>Trade coordination</li><li>Site safety</li></ul>
-        <div class="card__foot">
-          <a class="link-arrow" href="services.html#project-management">Learn more
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-          </a>
-        </div>
       </article>
     </div>
   </div>
@@ -425,7 +382,7 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
     </div>
 
     <div class="projects reveal">
-      <a class="project project--wide" href="projects.html#brighton">
+      <div class="project project--wide">
         <div class="project__media">
           <img src="assets/img/projects/brighton-facade-dusk.jpg"
                alt="Brighton luxury home at dusk: natural stone and timber-clad façade with a double-height entry and uplit travertine path."
@@ -436,9 +393,9 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
           <div class="project__title">Head Street</div>
           <p class="project__desc">Over 80 squares of timeless coastal luxury. Clean lines, a stone and timber façade with custom steelwork, and a grand double-height entry with a floating staircase.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="project" href="projects.html#mornington">
+      <div class="project">
         <div class="project__media">
           <img src="assets/img/projects/mornington-render-street.jpg"
                alt="Street view render of the Mornington duplex: white rendered forms, vertical timber garage doors and landscaped native planting."
@@ -450,9 +407,9 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
           <div class="project__title">Karella Crescent</div>
           <p class="project__desc">A duplex in one of Mornington's most sought-after pockets, with elevated bay views, expansive balconies and premium detailing throughout.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="project" href="projects.html#aberfeldie">
+      <div class="project">
         <div class="project__media">
           <img src="assets/img/projects/aberfeldie-facade-dusk.jpg"
                alt="Aberfeldie residence at dusk: contemporary rear extension with charcoal rendered walls, a timber deck and warm interior lighting."
@@ -463,9 +420,9 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
           <div class="project__title">Aberfeldie residence</div>
           <p class="project__desc">A full-scale renovation and rear extension delivering open-plan living, soaring ceilings and a sun-drenched alfresco area behind a classic façade.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="project" href="projects.html#strathmore">
+      <div class="project">
         <div class="project__media">
           <img src="assets/img/projects/strathmore-facade-dusk.jpg"
                alt="Strathmore custom home at dusk: gabled white and charcoal façade behind a dark vertical batten fence."
@@ -476,9 +433,9 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
           <div class="project__title">Strathmore custom home</div>
           <p class="project__desc">Built on a tight-access site with major logistical challenges. Proof that no site is too difficult when you build with experience.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="project" href="projects.html#rosebud">
+      <div class="project">
         <div class="project__media">
           <img src="assets/img/projects/rosebud-facade-dusk.jpg"
                alt="Rosebud duplex at dusk: white and charcoal gabled forms with timber garage doors, gravel driveway and concrete steppers."
@@ -489,9 +446,9 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
           <div class="project__title">Warranilla Avenue</div>
           <p class="project__desc">A beachside duplex built for year-round comfort. Light-filled and breezy in summer, warm and textural through winter.</p>
         </div>
-      </a>
+      </div>
 
-      <a class="project project--wide" href="projects.html#ascot-vale">
+      <div class="project project--wide">
         <div class="project__media">
           <img src="assets/img/projects/ascotvale-rear-lawn-dusk.jpg"
                alt="Ascot Vale duplex from the rear lawn at dusk, with a double-height glazed living space glowing against the evening sky."
@@ -502,11 +459,7 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
           <div class="project__title">Ascot Vale duplex</div>
           <p class="project__desc">Moments from the CBD, with rare rear laneway access, secure garaging and private outdoor zones. Inner-city convenience with a suburban lifestyle.</p>
         </div>
-      </a>
-    </div>
-
-    <div class="stack-cta">
-      <a class="btn btn--glass" href="projects.html">View all projects</a>
+      </div>
     </div>
   </div>
 </section>
@@ -751,21 +704,21 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
         <h4>Explore</h4>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="projects.html">Projects</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#enquire">Contact</a></li>
         </ul>
       </div>
 
       <div>
         <h4>Services</h4>
         <ul>
-          <li><a href="services.html#new-homes">New homes</a></li>
-          <li><a href="services.html#duplex">Duplex &amp; multi-dwelling</a></li>
-          <li><a href="services.html#renovations">Renovations &amp; extensions</a></li>
-          <li><a href="services.html#commercial">Office &amp; shop fit-outs</a></li>
-          <li><a href="services.html#design-build">Design &amp; build</a></li>
+          <li><a href="#services">New homes</a></li>
+          <li><a href="#services">Duplex &amp; multi-dwelling</a></li>
+          <li><a href="#services">Renovations &amp; extensions</a></li>
+          <li><a href="#services">Office &amp; shop fit-outs</a></li>
+          <li><a href="#services">Design &amp; build</a></li>
         </ul>
       </div>
 
@@ -789,20 +742,15 @@ if(t==='dark'||t==='light'){document.documentElement.setAttribute('data-theme',t
 
 
 <!-- Floating dock: call and consultation are the two actions that matter for a
-     builder, plus the theme control. Becomes a bottom bar on a phone. -->
+     builder. Becomes a bottom bar on a phone. -->
 <div class="dock">
-  <button class="dock__icon" id="themeToggle" type="button"
-          aria-label="Switch between light and dark theme">
-    <svg class="i-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
-    <svg class="i-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 13.2A9 9 0 1 1 10.8 3a7 7 0 0 0 10.2 10.2Z"/></svg>
-  </button>
   <a class="dock__btn dock__btn--call" href="tel:+61421258240">
     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
     Call
   </a>
-  <a class="dock__btn dock__btn--quote" href="contact.html">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M8 2v3M16 2v3"/><rect x="3" y="5" width="18" height="17" rx="2"/><path d="M3 10h18M8 15h5"/></svg>
+  <a class="dock__btn dock__btn--quote" href="#enquire">
     Consultation
+    <svg class="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
   </a>
 </div>
 

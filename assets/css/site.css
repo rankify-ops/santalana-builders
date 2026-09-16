@@ -1700,3 +1700,16 @@ body.nav-open .dock { display: none; }
   }
   .licence-strip span:first-child { color: var(--ink); }
 }
+
+/* ==========================================================================
+   Angled arrow on CTA buttons, and anchor offset
+   ========================================================================== */
+.btn__arrow {
+  flex: none;
+  transition: transform var(--t-med);
+}
+.btn:hover .btn__arrow,
+.dock__btn:hover .btn__arrow { transform: translate(2px, -2px); }
+
+/* In-page links land below the sticky header rather than under it. */
+section[id], #enquire { scroll-margin-top: 100px; }

@@ -25,10 +25,13 @@
     return root.getAttribute('data-theme') === 'light' ? 'light' : 'dark';
   }
 
-  var saved = storedTheme();
+  var themeBtn = document.getElementById('themeToggle');
+
+  // A stored choice only applies where the toggle exists, so a page without
+  // it can never get stuck in a theme the visitor has no way to switch back.
+  var saved = themeBtn ? storedTheme() : null;
   if (saved === 'dark' || saved === 'light') { root.setAttribute('data-theme', saved); }
 
-  var themeBtn = document.getElementById('themeToggle');
   if (themeBtn) {
     var syncThemeBtn = function () {
       var now = activeTheme();
