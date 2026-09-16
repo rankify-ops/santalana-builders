@@ -1741,3 +1741,13 @@ section[id], #enquire { scroll-margin-top: 100px; }
 @media (prefers-reduced-motion: reduce) {
   .js-reveal .dock, .js-reveal .dock.is-visible { transition: none; }
 }
+
+/* ==========================================================================
+   Client preview gate
+   Lift the countdown pill and offer popup above the floating dock (a column
+   bottom-right on desktop, a full-width bar on a phone).
+   ========================================================================== */
+:root { --pg-bottom-offset: 124px; }
+@media (max-width: 720px) {
+  :root { --pg-bottom-offset: 84px; }
+}

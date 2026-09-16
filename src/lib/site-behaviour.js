@@ -1,6 +1,8 @@
 /* Santa'lana Builders site behaviour
    Plain ES5-safe JS, no dependencies. */
-(function () {
+// Wrapped as a function so the React SiteScripts component can run it once
+// after hydration. The behaviour itself is unchanged from the static site.
+export function initSite() {
   'use strict';
 
   /* Opt in to the reveal animation only now that JS is running. */
@@ -390,4 +392,4 @@
   /* ---------- Footer year ---------- */
   var year = document.getElementById('year');
   if (year) { year.textContent = new Date().getFullYear(); }
-})();
+}

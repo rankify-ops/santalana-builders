@@ -11,3 +11,10 @@ desktop.ini
 *.swp
 .vscode/
 .idea/
+
+# Next.js
+.next/
+out/
+node_modules/
+*.tsbuildinfo
+next-env.d.ts

@@ -1,22 +1,36 @@
 # Santa'lana Builders website
 
-Static site, no build step. Open `index.html` in a browser, or serve the folder:
+Next.js (App Router) static export, the same stack as Rankify's other client sites.
+Converted 1:1 from the original static HTML on 17 Sep 2026: every page keeps the same
+markup, classes, copy and stylesheet, and the homepage was checked pixel for pixel
+against the old build.
 
 ```bash
-python -m http.server 4173
+npm install
+npm run dev        # http://localhost:3000
+npm run build      # static export in out/
 ```
+
+Every push to `main` deploys to https://rankify-ops.github.io/santalana-builders/ through
+`.github/workflows/deploy.yml` (basePath `/santalana-builders`). At domain cutover, remove
+`NEXT_PUBLIC_BASE_PATH` from the workflow and add `public/CNAME` in the same commit.
+
+The client preview lock (`src/components/PreviewGate.tsx`) sits over the site. Staff view,
+never locked: `/santalana-builders/staff-153de3/`. Remove the `<PreviewGate>` line in
+`src/app/layout.tsx` once Stefan has signed off.
 
 ## Pages
 
 | File | Purpose |
 |---|---|
-| `index.html` | Homepage. Hero with an inline enquiry form, trust bar, intro, six capability cards, featured projects, quote band, why-choose-us, five step process, credentials, service areas, closing CTA. |
-| `projects.html` | Six project write ups with galleries, plus a list of builds still awaiting photography. |
-| `services.html` | Six services with anchors so the homepage cards and footer can deep link into them. |
-| `about.html` | Stefan and the company, safety, why choose us, capabilities, memberships. |
-| `contact.html` | Contact details, a longer enquiry form that also asks for suburb and project stage, and a location card. |
-| `assets/css/site.css` | Whole design system. Tokens are at the top under `:root`. |
-| `assets/js/site.js` | Mobile nav, sticky header, scroll reveal, form handling, footer year. |
+| `src/app/page.tsx` | Homepage. Hero with an inline enquiry form, trust bar, intro, six capability cards, featured projects, quote band, why-choose-us, five step process, credentials, service areas, closing CTA. |
+| `src/app/projects/page.tsx` | Six project write ups with galleries, plus a list of builds still awaiting photography. |
+| `src/app/services/page.tsx` | Six services with anchors so the homepage cards and footer can deep link into them. |
+| `src/app/about/page.tsx` | Stefan and the company, safety, why choose us, capabilities, memberships. |
+| `src/app/contact/page.tsx` | Contact details, a longer enquiry form that also asks for suburb and project stage, and a location card. |
+| `src/app/site.css` | Whole design system. Tokens are at the top under `:root`. |
+| `src/lib/site-behaviour.js` | Mobile nav, sticky header, dock, scroll reveal, form handling, footer year. Run once after hydration by `src/components/SiteScripts.tsx`. |
+| `public/assets/img/` | All photography and brand images. |
 | `PHOTO-LIBRARY.md` | Every photo, where it came from, and a written description of each one. |
 
 ## Where the content came from
