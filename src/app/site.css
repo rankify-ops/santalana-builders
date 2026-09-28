@@ -1751,3 +1751,6 @@ section[id], #enquire { scroll-margin-top: 100px; }
 @media (max-width: 720px) {
   :root { --pg-bottom-offset: 84px; }
 }
+
+/* The angled arrow also sits inside .link-arrow, which has its own nudge. */
+.link-arrow:hover .btn__arrow { transform: translate(2px, -2px); }

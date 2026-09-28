@@ -1,15 +1,11 @@
 import type { Metadata } from "next";
 import { BASE_PATH, asset } from "@/lib/basePath";
-import { RedirectHome } from "@/components/RedirectHome";
 
 // Converted 1:1 from about.html. Markup, classes and copy are unchanged.
-// Temporarily hidden: only the homepage is being shared with the client.
-// Remove <RedirectHome /> and the robots line to bring this page back.
 export const metadata: Metadata = {
   title: { absolute: "About Santa'lana Builders | Stefan DiRienzo, Melbourne Builder" },
   description: "Santa'lana Builders is led by Stefan DiRienzo, a registered Victorian builder with 15+ years delivering high end residential projects. Fully licensed, $20M insured, HIA and MBA members.",
   alternates: { canonical: "https://www.santalana.com.au/about.html" },
-  robots: { index: false, follow: false },
   openGraph: {
     type: "website",
     title: "About | Santa'lana Builders",
@@ -21,8 +17,6 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <RedirectHome />
-      {" "}
       <a className="skip-link" href="#main">
         {"Skip to content"}
       </a>
@@ -95,6 +89,9 @@ export default function AboutPage() {
             {" "}
             <a className="btn btn--solid" href={`${BASE_PATH}/contact/`}>
               {"Start your build"}
+              <svg className="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M7 17 17 7M8 7h9v9" />
+              </svg>
             </a>
             {" "}
             <button className="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Menu">
@@ -173,6 +170,9 @@ export default function AboutPage() {
           {" "}
           <a className="btn btn--light btn--wide" href={`${BASE_PATH}/contact/`}>
             {"Request a consultation"}
+            <svg className="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M7 17 17 7M8 7h9v9" />
+            </svg>
           </a>
           {" "}
         </div>
@@ -1024,19 +1024,6 @@ export default function AboutPage() {
       {" "}
       <div className="dock">
         {" "}
-        <button className="dock__icon" id="themeToggle" type="button" aria-label="Switch between light and dark theme">
-          {" "}
-          <svg className="i-sun" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-            <circle cx="12" cy="12" r="4.2" />
-            <path d="M12 2v2.4M12 19.6V22M2 12h2.4M19.6 12H22M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7" />
-          </svg>
-          {" "}
-          <svg className="i-moon" width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-            <path d="M21 13.2A9 9 0 1 1 10.8 3a7 7 0 0 0 10.2 10.2Z" />
-          </svg>
-          {" "}
-        </button>
-        {" "}
         <a className="dock__btn dock__btn--call" href="tel:+61421258240">
           {" "}
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
@@ -1046,13 +1033,10 @@ export default function AboutPage() {
         </a>
         {" "}
         <a className="dock__btn dock__btn--quote" href={`${BASE_PATH}/contact/`}>
-          {" "}
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-            <path d="M8 2v3M16 2v3" />
-            <rect x="3" y="5" width="18" height="17" rx="2" />
-            <path d="M3 10h18M8 15h5" />
-          </svg>
           {" Consultation "}
+          <svg className="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M7 17 17 7M8 7h9v9" />
+          </svg>
         </a>
         {" "}
       </div>

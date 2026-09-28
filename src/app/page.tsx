@@ -117,19 +117,19 @@ export default function HomePage() {
               {"Home"}
             </a>
             {" "}
-            <a className="nav__link" href="#projects">
+            <a className="nav__link" href={`${BASE_PATH}/projects/`}>
               {"Projects"}
             </a>
             {" "}
-            <a className="nav__link" href="#services">
+            <a className="nav__link" href={`${BASE_PATH}/services/`}>
               {"Services"}
             </a>
             {" "}
-            <a className="nav__link" href="#about">
+            <a className="nav__link" href={`${BASE_PATH}/about/`}>
               {"About"}
             </a>
             {" "}
-            <a className="nav__link" href="#enquire">
+            <a className="nav__link" href={`${BASE_PATH}/contact/`}>
               {"Contact"}
             </a>
             {" "}
@@ -187,19 +187,19 @@ export default function HomePage() {
             {"Home"}
           </a>
           {" "}
-          <a className="nav__link" style={{ "--i": "1" }} href="#projects">
+          <a className="nav__link" style={{ "--i": "1" }} href={`${BASE_PATH}/projects/`}>
             {"Projects"}
           </a>
           {" "}
-          <a className="nav__link" style={{ "--i": "2" }} href="#services">
+          <a className="nav__link" style={{ "--i": "2" }} href={`${BASE_PATH}/services/`}>
             {"Services"}
           </a>
           {" "}
-          <a className="nav__link" style={{ "--i": "3" }} href="#about">
+          <a className="nav__link" style={{ "--i": "3" }} href={`${BASE_PATH}/about/`}>
             {"About"}
           </a>
           {" "}
-          <a className="nav__link" style={{ "--i": "4" }} href="#enquire">
+          <a className="nav__link" style={{ "--i": "4" }} href={`${BASE_PATH}/contact/`}>
             {"Contact"}
           </a>
           {" "}
@@ -277,7 +277,7 @@ export default function HomePage() {
                   </svg>
                 </a>
                 {" "}
-                <a className="btn btn--glass" href="#projects">
+                <a className="btn btn--glass" href={`${BASE_PATH}/projects/`}>
                   {"View our projects "}
                   <svg className="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
                     <path d="M7 17 17 7M8 7h9v9" />
@@ -588,6 +588,15 @@ export default function HomePage() {
                 {" "}
               </div>
               {" "}
+              <div className="stack-cta">
+                <a className="link-arrow" href={`${BASE_PATH}/about/`}>
+                  {"More about Santa'lana"}
+                  <svg className="btn__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="M7 17 17 7M8 7h9v9" />
+                  </svg>
+                </a>
+              </div>
+              {" "}
             </div>
             {" "}
             <div className="split__media reveal" style={{ "--d": "120ms" }}>
@@ -670,6 +679,15 @@ export default function HomePage() {
                   </li>
                 </ul>
                 {" "}
+                <div className="card__foot">
+                  <a className="link-arrow" href={`${BASE_PATH}/services/#new-homes`}>
+                    {"Learn more"}
+                    <svg className="btn__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M7 17 17 7M8 7h9v9" />
+                    </svg>
+                  </a>
+                </div>
+                {" "}
               </article>
               {" "}
               <article className="card">
@@ -705,6 +723,15 @@ export default function HomePage() {
                   </li>
                 </ul>
                 {" "}
+                <div className="card__foot">
+                  <a className="link-arrow" href={`${BASE_PATH}/services/#duplex`}>
+                    {"Learn more"}
+                    <svg className="btn__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M7 17 17 7M8 7h9v9" />
+                    </svg>
+                  </a>
+                </div>
+                {" "}
               </article>
               {" "}
               <article className="card">
@@ -738,6 +765,15 @@ export default function HomePage() {
                     {"Full refurbishment"}
                   </li>
                 </ul>
+                {" "}
+                <div className="card__foot">
+                  <a className="link-arrow" href={`${BASE_PATH}/services/#renovations`}>
+                    {"Learn more"}
+                    <svg className="btn__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M7 17 17 7M8 7h9v9" />
+                    </svg>
+                  </a>
+                </div>
                 {" "}
               </article>
               {" "}
@@ -774,6 +810,15 @@ export default function HomePage() {
                   </li>
                 </ul>
                 {" "}
+                <div className="card__foot">
+                  <a className="link-arrow" href={`${BASE_PATH}/services/#commercial`}>
+                    {"Learn more"}
+                    <svg className="btn__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M7 17 17 7M8 7h9v9" />
+                    </svg>
+                  </a>
+                </div>
+                {" "}
               </article>
               {" "}
               <article className="card">
@@ -807,6 +852,15 @@ export default function HomePage() {
                     {"Fixed-price contract"}
                   </li>
                 </ul>
+                {" "}
+                <div className="card__foot">
+                  <a className="link-arrow" href={`${BASE_PATH}/services/#design-build`}>
+                    {"Learn more"}
+                    <svg className="btn__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M7 17 17 7M8 7h9v9" />
+                    </svg>
+                  </a>
+                </div>
                 {" "}
               </article>
               {" "}
@@ -842,6 +896,15 @@ export default function HomePage() {
                   </li>
                 </ul>
                 {" "}
+                <div className="card__foot">
+                  <a className="link-arrow" href={`${BASE_PATH}/services/#project-management`}>
+                    {"Learn more"}
+                    <svg className="btn__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                      <path d="M7 17 17 7M8 7h9v9" />
+                    </svg>
+                  </a>
+                </div>
+                {" "}
               </article>
               {" "}
             </div>
@@ -874,7 +937,7 @@ export default function HomePage() {
             {" "}
             <div className="projects reveal">
               {" "}
-              <div className="project project--wide">
+              <a className="project project--wide" href={`${BASE_PATH}/projects/#brighton`}>
                 {" "}
                 <div className="project__media">
                   {" "}
@@ -906,9 +969,9 @@ export default function HomePage() {
                   {" "}
                 </div>
                 {" "}
-              </div>
+              </a>
               {" "}
-              <div className="project">
+              <a className="project" href={`${BASE_PATH}/projects/#mornington`}>
                 {" "}
                 <div className="project__media">
                   {" "}
@@ -944,9 +1007,9 @@ export default function HomePage() {
                   {" "}
                 </div>
                 {" "}
-              </div>
+              </a>
               {" "}
-              <div className="project">
+              <a className="project" href={`${BASE_PATH}/projects/#aberfeldie`}>
                 {" "}
                 <div className="project__media">
                   {" "}
@@ -978,9 +1041,9 @@ export default function HomePage() {
                   {" "}
                 </div>
                 {" "}
-              </div>
+              </a>
               {" "}
-              <div className="project">
+              <a className="project" href={`${BASE_PATH}/projects/#strathmore`}>
                 {" "}
                 <div className="project__media">
                   {" "}
@@ -1012,9 +1075,9 @@ export default function HomePage() {
                   {" "}
                 </div>
                 {" "}
-              </div>
+              </a>
               {" "}
-              <div className="project">
+              <a className="project" href={`${BASE_PATH}/projects/#rosebud`}>
                 {" "}
                 <div className="project__media">
                   {" "}
@@ -1046,9 +1109,9 @@ export default function HomePage() {
                   {" "}
                 </div>
                 {" "}
-              </div>
+              </a>
               {" "}
-              <div className="project project--wide">
+              <a className="project project--wide" href={`${BASE_PATH}/projects/#ascot-vale`}>
                 {" "}
                 <div className="project__media">
                   {" "}
@@ -1080,8 +1143,17 @@ export default function HomePage() {
                   {" "}
                 </div>
                 {" "}
-              </div>
+              </a>
               {" "}
+            </div>
+            {" "}
+            <div className="stack-cta">
+              <a className="btn btn--glass" href={`${BASE_PATH}/projects/`}>
+                {"View all projects"}
+                <svg className="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="M7 17 17 7M8 7h9v9" />
+                </svg>
+              </a>
             </div>
             {" "}
           </div>
@@ -1738,25 +1810,25 @@ export default function HomePage() {
                 </li>
                 {" "}
                 <li>
-                  <a href="#projects">
+                  <a href={`${BASE_PATH}/projects/`}>
                     {"Projects"}
                   </a>
                 </li>
                 {" "}
                 <li>
-                  <a href="#services">
+                  <a href={`${BASE_PATH}/services/`}>
                     {"Services"}
                   </a>
                 </li>
                 {" "}
                 <li>
-                  <a href="#about">
+                  <a href={`${BASE_PATH}/about/`}>
                     {"About"}
                   </a>
                 </li>
                 {" "}
                 <li>
-                  <a href="#enquire">
+                  <a href={`${BASE_PATH}/contact/`}>
                     {"Contact"}
                   </a>
                 </li>
@@ -1774,31 +1846,31 @@ export default function HomePage() {
               <ul>
                 {" "}
                 <li>
-                  <a href="#services">
+                  <a href={`${BASE_PATH}/services/#new-homes`}>
                     {"New homes"}
                   </a>
                 </li>
                 {" "}
                 <li>
-                  <a href="#services">
+                  <a href={`${BASE_PATH}/services/#duplex`}>
                     {"Duplex & multi-dwelling"}
                   </a>
                 </li>
                 {" "}
                 <li>
-                  <a href="#services">
+                  <a href={`${BASE_PATH}/services/#renovations`}>
                     {"Renovations & extensions"}
                   </a>
                 </li>
                 {" "}
                 <li>
-                  <a href="#services">
+                  <a href={`${BASE_PATH}/services/#commercial`}>
                     {"Office & shop fit-outs"}
                   </a>
                 </li>
                 {" "}
                 <li>
-                  <a href="#services">
+                  <a href={`${BASE_PATH}/services/#design-build`}>
                     {"Design & build"}
                   </a>
                 </li>
