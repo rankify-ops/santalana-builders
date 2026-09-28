@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { SiteScripts } from "@/components/SiteScripts";
-import { PreviewGate } from "@/components/PreviewGate";
 import { asset } from "@/lib/basePath";
 import "./site.css";
 
@@ -29,7 +28,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <SiteScripts />
-        <PreviewGate site="santalana-builders" staffPath="/staff-153de3" clientName="Santa'lana Builders" />
       </body>
     </html>
   );
