@@ -746,7 +746,9 @@ h1, h2, h3, h4 {
 }
 .split--media-first .split__media { order: -1; }
 @media (max-width: 900px) {
-  .split { grid-template-columns: 1fr; }
+  /* minmax(0, 1fr) rather than 1fr: a nowrap button inside the column would
+     otherwise set a min-content width wider than a phone screen. */
+  .split { grid-template-columns: minmax(0, 1fr); }
   .split--media-first .split__media { order: 0; }
 }
 
@@ -1855,7 +1857,7 @@ section[id], #enquire { scroll-margin-top: 100px; }
    height of the hero. */
 .choices--compact { gap: 6px; }
 .choices--compact .choice {
-  padding: 10px 12px;
+  padding: 8px 11px;
   gap: 0;
 }
 .choices--compact .choice__title { font-size: 13.5px; }
@@ -1874,3 +1876,42 @@ section[id], #enquire { scroll-margin-top: 100px; }
   opacity: .9;
 }
 .pagehero__icon svg { width: 46px; height: 46px; }
+
+/* Choice tiles carry the service icon beside the label. The icon sits on its
+   own row on the full tiles (which also show a note) and inline on the compact
+   hero tiles, so those stay one line tall and the form does not grow the hero. */
+.choice svg { color: var(--steel); flex: none; }
+.choice__input:checked + .choice svg { color: var(--ink); }
+.enquiry--dark .choice svg { color: var(--mist); }
+.enquiry--dark .choice__input:checked + .choice svg { color: #fff; }
+
+.choices--compact .choice {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+.choices--compact .choice__title { line-height: 1.25; }
+
+/* The gradient line of the hero headline is painted with background-clip:text,
+   which clips to the element box, so a tight line-height cut the descender off
+   the "g" in "budget". Give the line room below the baseline. */
+.hero h1 em {
+  line-height: 1.12;
+  padding-bottom: .06em;
+}
+
+/* On touch the inline arrow links were only 23px tall, under the 44px target
+   size. Expand the hit area with a pseudo-element rather than padding, so the
+   underline stays tight to the text. */
+.link-arrow { position: relative; }
+@media (hover: none), (max-width: 1040px) {
+  .link-arrow::before {
+    content: "";
+    position: absolute;
+    inset: -11px -6px;
+  }
+}
+
+/* Buttons in a CTA row can carry a long descriptive label ("More on office and
+   shop fit-outs"). Let those wrap instead of forcing their container wider. */
+.stack-cta .btn { white-space: normal; text-align: center; }

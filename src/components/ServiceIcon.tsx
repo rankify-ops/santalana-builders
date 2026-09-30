@@ -14,6 +14,8 @@ const PATHS: Record<string, string[]> = {
     "M24 6v6M24 36v6M6 24h6M36 24h6",
     "m20 24 3 3 6-6",
   ],
+  // Used by the "Something else" option on the enquiry forms.
+  other: ["M24 30v-3a5 5 0 1 0-5-5", "M24 38h.02"],
 };
 
 /** project-management also carries a circle, which paths alone cannot express. */

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BASE_PATH, asset } from "@/lib/basePath";
 import { breadcrumb, jsonLd, SITE } from "@/lib/schema";
+import { ServiceIcon } from "@/components/ServiceIcon";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Dock } from "@/components/Dock";
@@ -249,6 +250,7 @@ export default function ContactPage() {
                       {" "}
                       <label className="choice" htmlFor="x-i-new-home">
                         {" "}
+                        <ServiceIcon slug="new-homes" size={18} />
                         <span className="choice__title">
                           {"New home"}
                         </span>
@@ -263,6 +265,7 @@ export default function ContactPage() {
                       {" "}
                       <label className="choice" htmlFor="x-i-duplex">
                         {" "}
+                        <ServiceIcon slug="duplex" size={18} />
                         <span className="choice__title">
                           {"Duplex"}
                         </span>
@@ -277,6 +280,7 @@ export default function ContactPage() {
                       {" "}
                       <label className="choice" htmlFor="x-i-renovation">
                         {" "}
+                        <ServiceIcon slug="renovations" size={18} />
                         <span className="choice__title">
                           {"Renovation"}
                         </span>
@@ -291,6 +295,7 @@ export default function ContactPage() {
                       {" "}
                       <label className="choice" htmlFor="x-i-commercial">
                         {" "}
+                        <ServiceIcon slug="commercial" size={18} />
                         <span className="choice__title">
                           {"Fit-out"}
                         </span>
@@ -305,6 +310,7 @@ export default function ContactPage() {
                       {" "}
                       <label className="choice" htmlFor="x-i-design">
                         {" "}
+                        <ServiceIcon slug="design-build" size={18} />
                         <span className="choice__title">
                           {"Design & build"}
                         </span>
@@ -319,6 +325,7 @@ export default function ContactPage() {
                       {" "}
                       <label className="choice" htmlFor="x-i-other">
                         {" "}
+                        <ServiceIcon slug="other" size={18} />
                         <span className="choice__title">
                           {"Something else"}
                         </span>
