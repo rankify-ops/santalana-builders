@@ -220,18 +220,22 @@ export default function HomePage() {
                     <div className="choices choices--compact">
                       <input className="choice__input" type="radio" id="f-t-asap" name="timing" value="ASAP" required />
                       <label className="choice" htmlFor="f-t-asap">
+                        <ServiceIcon slug="asap" size={17} />
                         <span className="choice__title">ASAP</span>
                       </label>
                       <input className="choice__input" type="radio" id="f-t-1-3-months" name="timing" value="1 to 3 months" required />
                       <label className="choice" htmlFor="f-t-1-3-months">
+                        <ServiceIcon slug="1-3-months" size={17} />
                         <span className="choice__title">1 to 3 months</span>
                       </label>
                       <input className="choice__input" type="radio" id="f-t-3-6-months" name="timing" value="3 to 6 months" required />
                       <label className="choice" htmlFor="f-t-3-6-months">
+                        <ServiceIcon slug="3-6-months" size={17} />
                         <span className="choice__title">3 to 6 months</span>
                       </label>
                       <input className="choice__input" type="radio" id="f-t-planning" name="timing" value="Just planning" required />
                       <label className="choice" htmlFor="f-t-planning">
+                        <ServiceIcon slug="planning" size={17} />
                         <span className="choice__title">Just planning</span>
                       </label>
                     </div>

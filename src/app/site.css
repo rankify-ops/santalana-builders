@@ -2127,3 +2127,17 @@ form[data-autoadvance] [data-next] { display: none; }
 
   .hero .enquiry .enquiry__fine { margin-top: 16px; }
 }
+
+/* Compact tiles show no note, so the grid is one row. With the two-row
+   template the icon spanned both rows and settled about 3px below the label. */
+.choices--compact .choice {
+  grid-template-areas: "icon title";
+  align-items: center;
+}
+
+/* Contact links in the closing CTA were about 26px tall on a phone, under the
+   44px target size. They sit in a stacked list, so padding is safe here. */
+@media (max-width: 1040px) {
+  .cta__contacts a,
+  .cta__contacts span { padding-block: 9px; }
+}
