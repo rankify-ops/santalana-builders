@@ -2064,3 +2064,29 @@ section[id], #enquire { scroll-margin-top: 100px; }
    needs it to wire the stages up, and it is never the visible action anyway:
    on the last stage the script swaps it for Send enquiry. */
 form[data-autoadvance] [data-next] { display: none; }
+
+/* ==========================================================================
+   Hero enquiry panel on desktop
+   A fixed minimum height gives the panel some presence and stops it resizing
+   between the three steps. Kept under the height of the hero copy column so
+   the form still does not drive the height of the hero.
+   ========================================================================== */
+@media (min-width: 1041px) {
+  .hero .enquiry {
+    min-height: 560px;
+    display: flex;
+    flex-direction: column;
+  }
+  .hero .enquiry form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  /* Buttons settle at the bottom whichever step is showing. */
+  .hero .enquiry .fnav { margin-top: auto; }
+
+  /* A little more room in the tiles now that there is space for it. */
+  .hero .choices--compact { gap: 8px; }
+  .hero .choices--compact .choice { padding: 12px 13px; }
+  .hero .choices--compact .choice__title { font-size: 14px; }
+}

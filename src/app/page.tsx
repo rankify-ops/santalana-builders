@@ -163,11 +163,11 @@ export default function HomePage() {
               <div className="enquiry__head">
                 {" "}
                 <h2>
-                  {"Start your build"}
+                  {"Get in touch"}
                 </h2>
                 {" "}
                 <p>
-                  {"Three quick steps and Stefan will be in touch to arrange a consultation."}
+                  {"Ready to build, or still just working out whether it stacks up? Either way, tell us where you are at and Stefan will come back to you."}
                 </p>
                 {" "}
               </div>
