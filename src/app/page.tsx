@@ -406,15 +406,15 @@ export default function HomePage() {
               </h2>
               {" "}
               <p className="lede" style={{ marginTop: "24px" }}>
-                {" Choosing the right team to bring your vision to life can feel overwhelming. Your project is one of the most significant investments you'll make, and we're committed to making the experience as seamless and stress-free as possible. "}
+                {" Most people build once, and it is the biggest cheque they will ever write. We run the job so you always know what is happening on site and what it is costing, without having to chase anyone for an answer. "}
               </p>
               {" "}
               <p style={{ color: "var(--slate)", maxWidth: "62ch" }}>
-                {" Stefan DiRienzo leads Santa'lana Builders with extensive experience managing a wide range of construction projects, from complex builds to boutique renovations. With deep industry knowledge we manage every aspect of your project, ensuring a smooth and efficient process from concept to completion. "}
+                {" Stefan DiRienzo leads Santa'lana Builders, with experience across everything from tight access custom builds to boutique renovations. He runs the programme, the trades and the budget himself, so the person who quotes your job is the person running it. "}
               </p>
               {" "}
               <p style={{ color: "var(--slate)", maxWidth: "62ch" }}>
-                {" Our tradesmen take great pride in delivering outstanding results. We focus on understanding your specific needs and work closely with you so every detail is executed to perfection. We place high importance on worksite safety and make sure any contractor accessing your home is fully licensed and trained. That is how we protect you, your family and our team. "}
+                {" The trades we use are the trades we keep using, and the standard gets checked before it is covered up rather than after. Everyone who accesses your home is licensed and trained, and the site is run that way whether or not you are there on the day. "}
               </p>
               {" "}
               <div className="signature">
@@ -496,7 +496,7 @@ export default function HomePage() {
                 </div>
                 {" "}
                 <p>
-                  {"Architecturally designed residences built to the highest standard, with premium finishes and seamless indoor-outdoor integration."}
+                  {"Architecturally designed residences built to the highest standard, with premium finishes and living space that opens properly to the outside."}
                 </p>
                 {" "}
                 <ul className="card__list">
@@ -1048,7 +1048,7 @@ export default function HomePage() {
                 </h3>
                 {" "}
                 <p>
-                  {"We prioritise clear communication, keeping you informed from start to finish for complete peace of mind."}
+                  {"You get one number to call and a straight answer on it. If a date slips or a cost changes, you hear it from us before you notice it yourself."}
                 </p>
                 {" "}
               </div>
@@ -1269,9 +1269,9 @@ export default function HomePage() {
           {" "}
           <div className="wrap">
             {" "}
-            <div className="section-head section-head--center reveal" style={{ marginBottom: "34px" }}>
+            <div className="section-head reveal" style={{ marginBottom: "34px" }}>
               {" "}
-              <p className="eyebrow eyebrow--center">
+              <p className="eyebrow">
                 {"Where we build"}
               </p>
               {" "}

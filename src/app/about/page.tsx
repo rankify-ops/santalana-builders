@@ -94,15 +94,15 @@ export default function AboutPage() {
               </p>
               {" "}
               <p style={{ color: "var(--slate)", maxWidth: "62ch" }}>
-                {" With deep industry knowledge, we expertly manage every aspect of your project, ensuring a smooth and efficient process from concept to completion. Renowned for our attention to detail and tailored approach, we deliver each project to the highest standard, on time and within budget. "}
+                {" He has run everything from tight access custom builds to boutique renovations, and he still runs them from the site rather than an office. The programme, the trades and the budget sit in one place, which is why the dates you are given at the start are the dates you get. "}
               </p>
               {" "}
               <p style={{ color: "var(--slate)", maxWidth: "62ch" }}>
-                {" Choosing the right team to bring your vision to life can feel overwhelming. We understand that your project is one of the most significant investments you'll make, and we're committed to making the experience as seamless and stress-free as possible. From start to finish, we'll ensure you feel confident and informed, guiding you through every stage. "}
+                {" Choosing a builder comes down to who you trust with a very large sum of money and a long stretch of your life. We would rather over explain than leave you guessing, so you get straight answers on cost and programme, including when the answer is not the one you wanted. "}
               </p>
               {" "}
               <p style={{ color: "var(--slate)", maxWidth: "62ch" }}>
-                {" Our team of highly skilled and qualified tradesmen take great pride in delivering outstanding results. We focus on understanding your specific needs and work closely with you to ensure every detail is executed to perfection. "}
+                {" The trades we use are the trades we keep using. Most have been on our sites for years, they are licensed, and they know the standard is checked before the work is covered up rather than after. "}
               </p>
               {" "}
               <div className="signature">
@@ -246,7 +246,7 @@ export default function AboutPage() {
                 </h3>
                 {" "}
                 <p>
-                  {"We prioritise clear communication, keeping you informed from start to finish for complete peace of mind."}
+                  {"You get one number to call and a straight answer on it. If a date slips or a cost changes, you hear it from us before you notice it yourself."}
                 </p>
                 {" "}
               </div>
@@ -288,7 +288,7 @@ export default function AboutPage() {
               </p>
               {" "}
               <p style={{ color: "var(--slate)" }}>
-                {" We stand apart from cheaper, non-reputable builders by being fully insured and licensed. Our commitment to professionalism and strict adherence to Australian standards ensures your project is in expert hands, prioritising quality, safety and customer satisfaction from start to finish. "}
+                {" Plenty of cheaper quotes come from builders who are not registered, not insured, or both. We are a registered building practitioner, we carry $20M public liability, and we build to the Australian standards. It is the part of a quote you cannot see, and the part you find out about later. "}
               </p>
               {" "}
               <div className="stack-cta">
@@ -418,9 +418,9 @@ export default function AboutPage() {
           {" "}
           <div className="wrap">
             {" "}
-            <div className="section-head section-head--center reveal" style={{ marginBottom: "34px" }}>
+            <div className="section-head reveal" style={{ marginBottom: "34px" }}>
               {" "}
-              <p className="eyebrow eyebrow--center">
+              <p className="eyebrow">
                 {"Where we build"}
               </p>
               {" "}

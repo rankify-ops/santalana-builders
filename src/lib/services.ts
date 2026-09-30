@@ -664,7 +664,7 @@ export const SERVICES: Service[] = [
     pillars: [
       {
         h3: "Clear communication",
-        p: "We prioritise clear communication, keeping you informed from start to finish for complete peace of mind.",
+        p: "You get one number to call and a straight answer on it. If a date slips or a cost changes, you hear it from us before you notice it yourself.",
       },
       {
         h3: "Efficient processes",

@@ -234,7 +234,7 @@ export default function ServicesPage() {
               </h2>
               {" "}
               <p className="lede" style={{ marginTop: "22px" }}>
-                {" Full-scale renovations and rear extensions that blend classic charm with contemporary luxury. Open-plan living, soaring ceilings and seamless indoor-outdoor flow behind a heritage façade. "}
+                {" Full-scale renovations and rear extensions that keep the front of a period home and rebuild what is behind it. Open plan living, high ceilings and a rear that opens properly to the garden, behind a heritage façade. "}
               </p>
               {" "}
               <p style={{ color: "var(--slate)" }}>
@@ -530,7 +530,7 @@ export default function ServicesPage() {
                 </h3>
                 {" "}
                 <p>
-                  {"We prioritise clear communication, keeping you informed from start to finish for complete peace of mind."}
+                  {"You get one number to call and a straight answer on it. If a date slips or a cost changes, you hear it from us before you notice it yourself."}
                 </p>
                 {" "}
               </div>
