@@ -167,7 +167,7 @@ export default function HomePage() {
                 </h2>
                 {" "}
                 <p>
-                  {"Two quick steps and Stefan will be in touch to arrange a consultation."}
+                  {"Three quick steps and Stefan will be in touch to arrange a consultation."}
                 </p>
                 {" "}
               </div>
@@ -214,7 +214,31 @@ export default function HomePage() {
                   {" "}
                 </div>
                 {" "}
-                <div className="fstep" data-step="2" data-title="Contact">
+                                <div className="fstep" data-step="2" data-title="Timing">
+                  <fieldset className="field fieldset">
+                    <legend>When do you want to start?</legend>
+                    <div className="choices choices--compact">
+                      <input className="choice__input" type="radio" id="f-t-asap" name="timing" value="ASAP" required />
+                      <label className="choice" htmlFor="f-t-asap">
+                        <span className="choice__title">ASAP</span>
+                      </label>
+                      <input className="choice__input" type="radio" id="f-t-1-3-months" name="timing" value="1 to 3 months" required />
+                      <label className="choice" htmlFor="f-t-1-3-months">
+                        <span className="choice__title">1 to 3 months</span>
+                      </label>
+                      <input className="choice__input" type="radio" id="f-t-3-6-months" name="timing" value="3 to 6 months" required />
+                      <label className="choice" htmlFor="f-t-3-6-months">
+                        <span className="choice__title">3 to 6 months</span>
+                      </label>
+                      <input className="choice__input" type="radio" id="f-t-planning" name="timing" value="Just planning" required />
+                      <label className="choice" htmlFor="f-t-planning">
+                        <span className="choice__title">Just planning</span>
+                      </label>
+                    </div>
+                  </fieldset>
+                </div>
+                {" "}
+                <div className="fstep" data-step="3" data-title="Contact">
                   {" "}
                   <div className="field">
                     {" "}

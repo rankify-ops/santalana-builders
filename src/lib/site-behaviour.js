@@ -192,6 +192,7 @@ export function initSite() {
 
   var LABELS = {
     interest: 'Building',
+    timing:   'Timing',
     suburb:   'Suburb',
     stage:    'Stage',
     budget:   'Budget',
@@ -200,7 +201,7 @@ export function initSite() {
     phone:    'Phone',
     email:    'Email'
   };
-  var ORDER = ['name', 'phone', 'email', 'interest', 'suburb', 'stage', 'budget', 'detail'];
+  var ORDER = ['name', 'phone', 'email', 'interest', 'timing', 'suburb', 'stage', 'budget', 'detail'];
 
   function fieldsIn(el) {
     return Array.prototype.slice.call(
