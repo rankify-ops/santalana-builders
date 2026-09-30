@@ -466,13 +466,10 @@ export default function HomePage() {
               {" "}
               <article className="card">
                 {" "}
-                <div className="card__icon">
-                    <ServiceIcon slug="new-homes" />
-                  </div>
-                {" "}
-                <h3>
-                  {"New homes & custom builds"}
-                </h3>
+                <div className="card__head">
+                  <div className="card__icon"> <ServiceIcon slug="new-homes" /> </div>
+                  <h3> {"New homes & custom builds"} </h3>
+                </div>
                 {" "}
                 <p>
                   {"Architecturally designed residences built to the highest standard, with premium finishes and seamless indoor-outdoor integration."}
@@ -503,13 +500,10 @@ export default function HomePage() {
               {" "}
               <article className="card">
                 {" "}
-                <div className="card__icon">
-                    <ServiceIcon slug="duplex" />
-                  </div>
-                {" "}
-                <h3>
-                  {"Duplex & multi-dwelling"}
-                </h3>
+                <div className="card__head">
+                  <div className="card__icon"> <ServiceIcon slug="duplex" /> </div>
+                  <h3> {"Duplex & multi-dwelling"} </h3>
+                </div>
                 {" "}
                 <p>
                   {"Side-by-side and dual-occupancy developments that maximise a site's value without compromising on design or liveability."}
@@ -540,13 +534,10 @@ export default function HomePage() {
               {" "}
               <article className="card">
                 {" "}
-                <div className="card__icon">
-                    <ServiceIcon slug="renovations" />
-                  </div>
-                {" "}
-                <h3>
-                  {"Renovations & extensions"}
-                </h3>
+                <div className="card__head">
+                  <div className="card__icon"> <ServiceIcon slug="renovations" /> </div>
+                  <h3> {"Renovations & extensions"} </h3>
+                </div>
                 {" "}
                 <p>
                   {"Full-scale renovations and rear extensions that blend heritage character with contemporary luxury and open-plan living."}
@@ -577,13 +568,10 @@ export default function HomePage() {
               {" "}
               <article className="card">
                 {" "}
-                <div className="card__icon">
-                    <ServiceIcon slug="commercial" />
-                  </div>
-                {" "}
-                <h3>
-                  {"Office & shop fit-outs"}
-                </h3>
+                <div className="card__head">
+                  <div className="card__icon"> <ServiceIcon slug="commercial" /> </div>
+                  <h3> {"Office & shop fit-outs"} </h3>
+                </div>
                 {" "}
                 <p>
                   {"Commercial fit-outs delivered to programme. Workplaces and retail spaces finished to the same standard as our homes."}
@@ -614,13 +602,10 @@ export default function HomePage() {
               {" "}
               <article className="card">
                 {" "}
-                <div className="card__icon">
-                    <ServiceIcon slug="design-build" />
-                  </div>
-                {" "}
-                <h3>
-                  {"Design & build"}
-                </h3>
+                <div className="card__head">
+                  <div className="card__icon"> <ServiceIcon slug="design-build" /> </div>
+                  <h3> {"Design & build"} </h3>
+                </div>
                 {" "}
                 <p>
                   {"One team from first sketch to handover. We coordinate design, documentation, permits and construction under a single point of contact."}
@@ -651,13 +636,10 @@ export default function HomePage() {
               {" "}
               <article className="card">
                 {" "}
-                <div className="card__icon">
-                    <ServiceIcon slug="project-management" />
-                  </div>
-                {" "}
-                <h3>
-                  {"Project management"}
-                </h3>
+                <div className="card__head">
+                  <div className="card__icon"> <ServiceIcon slug="project-management" /> </div>
+                  <h3> {"Project management"} </h3>
+                </div>
                 {" "}
                 <p>
                   {"Our refined project management system keeps trades, timelines and budget aligned, and keeps you informed at every stage."}

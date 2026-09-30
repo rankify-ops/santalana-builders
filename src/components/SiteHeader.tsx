@@ -1,5 +1,7 @@
 import { BASE_PATH, asset } from "@/lib/basePath";
 import { ArrowUpRight, Mail, Phone } from "@/components/icons";
+import { ServiceIcon } from "@/components/ServiceIcon";
+import { SERVICES } from "@/lib/services";
 
 export type NavKey = "home" | "projects" | "services" | "about" | "contact";
 
@@ -36,6 +38,11 @@ function BrandMark() {
 
 /**
  * Utility strip, sticky header and the full-screen mobile menu.
+ *
+ * Services carries a submenu of the six service pages. It opens on hover and
+ * on keyboard focus through CSS alone, and the parent link still goes to the
+ * services index, so the menu needs no JavaScript to be usable.
+ *
  * `ctaHref` differs on the homepage, where the button scrolls to the in-page
  * enquiry form instead of loading the contact page.
  */
@@ -66,16 +73,59 @@ export function SiteHeader({ current, ctaHref }: { current?: NavKey; ctaHref?: s
           <BrandMark />
 
           <nav className="nav" id="primaryNav" aria-label="Primary">
-            {NAV.map((item) => (
-              <a
-                key={item.key}
-                className="nav__link"
-                href={`${BASE_PATH}${item.href}`}
-                aria-current={item.key === current ? "page" : undefined}
-              >
-                {item.label}
-              </a>
-            ))}
+            {NAV.map((item) =>
+              item.key === "services" ? (
+                <div className="nav__group" key={item.key}>
+                  <a
+                    className="nav__link nav__link--parent"
+                    href={`${BASE_PATH}${item.href}`}
+                    aria-current={item.key === current ? "page" : undefined}
+                  >
+                    {item.label}
+                    <svg
+                      className="nav__caret"
+                      width="10"
+                      height="10"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="m6 9 6 6 6-6" />
+                    </svg>
+                  </a>
+
+                  <div className="submenu">
+                    <a className="submenu__all" href={`${BASE_PATH}/services/`}>
+                      All services
+                      <ArrowUpRight size={13} />
+                    </a>
+                    <ul>
+                      {SERVICES.map((s) => (
+                        <li key={s.slug}>
+                          <a href={`${BASE_PATH}/services/${s.slug}/`}>
+                            <ServiceIcon slug={s.slug} size={20} />
+                            <span>{s.navLabel}</span>
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={item.key}
+                  className="nav__link"
+                  href={`${BASE_PATH}${item.href}`}
+                  aria-current={item.key === current ? "page" : undefined}
+                >
+                  {item.label}
+                </a>
+              )
+            )}
           </nav>
 
           <div className="header-actions">
@@ -115,17 +165,39 @@ export function SiteHeader({ current, ctaHref }: { current?: NavKey; ctaHref?: s
         </div>
 
         <nav className="wrap navpanel__body" aria-label="Mobile">
-          {NAV.map((item, i) => (
-            <a
-              key={item.key}
-              className="nav__link"
-              style={{ "--i": String(i) }}
-              href={`${BASE_PATH}${item.href}`}
-              aria-current={item.key === current ? "page" : undefined}
-            >
-              {item.label}
-            </a>
-          ))}
+          {NAV.map((item, i) =>
+            item.key === "services" ? (
+              <div className="navpanel__group" style={{ "--i": String(i) }} key={item.key}>
+                <a
+                  className="nav__link"
+                  href={`${BASE_PATH}${item.href}`}
+                  aria-current={item.key === current ? "page" : undefined}
+                >
+                  {item.label}
+                </a>
+                <ul className="navpanel__sub">
+                  {SERVICES.map((s) => (
+                    <li key={s.slug}>
+                      <a href={`${BASE_PATH}/services/${s.slug}/`}>
+                        <ServiceIcon slug={s.slug} size={18} />
+                        <span>{s.navLabel}</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : (
+              <a
+                key={item.key}
+                className="nav__link"
+                style={{ "--i": String(i) }}
+                href={`${BASE_PATH}${item.href}`}
+                aria-current={item.key === current ? "page" : undefined}
+              >
+                {item.label}
+              </a>
+            )
+          )}
         </nav>
 
         <div className="wrap navpanel__foot">

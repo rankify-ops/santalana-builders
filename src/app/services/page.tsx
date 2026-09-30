@@ -78,10 +78,12 @@ export default function ServicesPage() {
             {" "}
             <div className="reveal">
               {" "}
-              <div className="card__icon"><ServiceIcon slug="new-homes" /></div>
-              <p className="eyebrow">
+              <div className="card__head">
+                <div className="card__icon"><ServiceIcon slug="new-homes" /></div>
+                <p className="eyebrow">
                 {"Service 01"}
               </p>
+              </div>
               {" "}
               <h2 className="h-xl">
                 {"New homes & custom builds"}
@@ -154,10 +156,12 @@ export default function ServicesPage() {
             {" "}
             <div className="reveal" style={{ "--d": "100ms" }}>
               {" "}
-              <div className="card__icon"><ServiceIcon slug="duplex" /></div>
-              <p className="eyebrow">
+              <div className="card__head">
+                <div className="card__icon"><ServiceIcon slug="duplex" /></div>
+                <p className="eyebrow">
                 {"Service 02"}
               </p>
+              </div>
               {" "}
               <h2 className="h-xl">
                 {"Duplex & multi-dwelling"}
@@ -218,10 +222,12 @@ export default function ServicesPage() {
             {" "}
             <div className="reveal">
               {" "}
-              <div className="card__icon"><ServiceIcon slug="renovations" /></div>
-              <p className="eyebrow">
+              <div className="card__head">
+                <div className="card__icon"><ServiceIcon slug="renovations" /></div>
+                <p className="eyebrow">
                 {"Service 03"}
               </p>
+              </div>
               {" "}
               <h2 className="h-xl">
                 {"Renovations & extensions"}
@@ -308,10 +314,12 @@ export default function ServicesPage() {
             {" "}
             <div className="reveal" style={{ "--d": "100ms" }}>
               {" "}
-              <div className="card__icon"><ServiceIcon slug="commercial" /></div>
-              <p className="eyebrow">
+              <div className="card__head">
+                <div className="card__icon"><ServiceIcon slug="commercial" /></div>
+                <p className="eyebrow">
                 {"Service 04"}
               </p>
+              </div>
               {" "}
               <h2 className="h-xl">
                 {"Office & shop fit-outs"}
@@ -372,10 +380,12 @@ export default function ServicesPage() {
             {" "}
             <div className="reveal">
               {" "}
-              <div className="card__icon"><ServiceIcon slug="design-build" /></div>
-              <p className="eyebrow">
+              <div className="card__head">
+                <div className="card__icon"><ServiceIcon slug="design-build" /></div>
+                <p className="eyebrow">
                 {"Service 05"}
               </p>
+              </div>
               {" "}
               <h2 className="h-xl">
                 {"Design & build"}
@@ -442,10 +452,12 @@ export default function ServicesPage() {
             {" "}
             <div className="section-head reveal">
               {" "}
-              <div className="card__icon"><ServiceIcon slug="project-management" /></div>
-              <p className="eyebrow">
+              <div className="card__head">
+                <div className="card__icon"><ServiceIcon slug="project-management" /></div>
+                <p className="eyebrow">
                 {"Service 06"}
               </p>
+              </div>
               {" "}
               <h2 className="h-xl">
                 {"Project management"}
