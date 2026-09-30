@@ -143,7 +143,8 @@ export function initSite() {
      Hidden while the hero's own buttons are on screen; shown once they have
      scrolled off the top. Pages without a hero CTA just show it. */
   var dock = document.querySelector('.dock');
-  var heroCta = document.querySelector('.hero__cta');
+  // Homepage hero buttons, or the page hero buttons on an interior page.
+  var heroCta = document.querySelector('.hero__cta, .pagehero .stack-cta');
   if (dock) {
     if (heroCta) {
       // Visible once the bottom of the hero buttons has gone above the viewport.

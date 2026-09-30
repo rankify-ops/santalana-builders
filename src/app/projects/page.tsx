@@ -1,9 +1,14 @@
 import type { Metadata } from "next";
 import { BASE_PATH, asset } from "@/lib/basePath";
+import { breadcrumb, jsonLd, projectsItemList, SITE } from "@/lib/schema";
+import { SiteHeader } from "@/components/SiteHeader";
+import { SiteFooter } from "@/components/SiteFooter";
+import { Dock } from "@/components/Dock";
+import { LicenceStrip } from "@/components/LicenceStrip";
 
 // Converted 1:1 from projects.html. Markup, classes and copy are unchanged.
 export const metadata: Metadata = {
-  title: { absolute: "Projects | Santa'lana Builders, Melbourne & Mornington Peninsula" },
+  title: { absolute: "Projects | Santa'lana Builders Melbourne" },
   description: "Selected builds by Santa'lana Builders: luxury homes, duplexes and renovations in Brighton, Aberfeldie, Strathmore, Ascot Vale, Rosebud and Mornington.",
   alternates: { canonical: "https://www.santalana.com.au/projects.html" },
   openGraph: {
@@ -17,167 +22,16 @@ export const metadata: Metadata = {
 export default function ProjectsPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        // Static, author-controlled JSON.
+        dangerouslySetInnerHTML={{ __html: jsonLd([{ "@type": "CollectionPage", "@id": `${SITE}/projects/#page`, name: "Projects", url: `${SITE}/projects/` }, projectsItemList(), breadcrumb([{ name: "Projects", path: "/projects/" }])]) }}
+      />
       <a className="skip-link" href="#main">
         {"Skip to content"}
       </a>
       {" "}
-      <div className="utility">
-        {" "}
-        <div className="wrap utility__inner">
-          {" "}
-          <span className="utility__licence">
-            {"Registered Building Practitioner  /  DB-U 100456  /  CB-U 100040"}
-          </span>
-          {" "}
-          <div className="utility__links">
-            {" "}
-            <a className="utility__item" href="tel:+61421258240">
-              {"0421 258 240"}
-            </a>
-            {" "}
-            <a className="utility__item" href="mailto:stefan@santalana.com.au">
-              {"stefan@santalana.com.au"}
-            </a>
-            {" "}
-          </div>
-          {" "}
-        </div>
-        {" "}
-      </div>
-      {" "}
-      <header className="site-header" id="siteHeader">
-        {" "}
-        <div className="wrap site-header__inner">
-          {" "}
-          <a className="brandmark" href={`${BASE_PATH}/`} aria-label="Santa'lana Builders home">
-            {" "}
-            <img className="brandmark__light" src={asset("/assets/img/brand/logo-white.png")} alt="Santa'lana Builders" width="2001" height="833" />
-            {" "}
-            <img className="brandmark__dark" src={asset("/assets/img/brand/logo-dark.png")} alt="Santa'lana Builders" width="2000" height="833" />
-            {" "}
-          </a>
-          {" "}
-          <nav className="nav" id="primaryNav" aria-label="Primary">
-            {" "}
-            <a className="nav__link" href={`${BASE_PATH}/`}>
-              {"Home"}
-            </a>
-            {" "}
-            <a className="nav__link" href={`${BASE_PATH}/projects/`} aria-current="page">
-              {"Projects"}
-            </a>
-            {" "}
-            <a className="nav__link" href={`${BASE_PATH}/services/`}>
-              {"Services"}
-            </a>
-            {" "}
-            <a className="nav__link" href={`${BASE_PATH}/about/`}>
-              {"About"}
-            </a>
-            {" "}
-            <a className="nav__link" href={`${BASE_PATH}/contact/`}>
-              {"Contact"}
-            </a>
-            {" "}
-          </nav>
-          {" "}
-          <div className="header-actions">
-            {" "}
-            <a className="header-phone" href="tel:+61421258240">
-              {"0421 258 240"}
-            </a>
-            {" "}
-            <a className="btn btn--solid" href={`${BASE_PATH}/contact/`}>
-              {"Start your build"}
-              <svg className="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                <path d="M7 17 17 7M8 7h9v9" />
-              </svg>
-            </a>
-            {" "}
-            <button className="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navPanel" aria-label="Menu">
-              {" "}
-              <span />
-              <span />
-              {" "}
-            </button>
-            {" "}
-          </div>
-          {" "}
-        </div>
-        {" "}
-      </header>
-      {" "}
-      {/* Full-screen mobile menu. Hidden from assistive tech until opened. */}
-      {" "}
-      <div className="navpanel" id="navPanel" role="dialog" aria-modal="true" aria-label="Menu" inert>
-        {" "}
-        <div className="wrap navpanel__top">
-          {" "}
-          <a className="brandmark" href={`${BASE_PATH}/`} aria-label="Santa'lana Builders home">
-            {" "}
-            <img className="brandmark__light" src={asset("/assets/img/brand/logo-white.png")} alt="Santa'lana Builders" width="2001" height="833" />
-            {" "}
-            <img className="brandmark__dark" src={asset("/assets/img/brand/logo-dark.png")} alt="Santa'lana Builders" width="2000" height="833" />
-            {" "}
-          </a>
-          {" "}
-        </div>
-        {" "}
-        <nav className="wrap navpanel__body" aria-label="Mobile">
-          {" "}
-          <a className="nav__link" style={{ "--i": "0" }} href={`${BASE_PATH}/`}>
-            {"Home"}
-          </a>
-          {" "}
-          <a className="nav__link" style={{ "--i": "1" }} href={`${BASE_PATH}/projects/`} aria-current="page">
-            {"Projects"}
-          </a>
-          {" "}
-          <a className="nav__link" style={{ "--i": "2" }} href={`${BASE_PATH}/services/`}>
-            {"Services"}
-          </a>
-          {" "}
-          <a className="nav__link" style={{ "--i": "3" }} href={`${BASE_PATH}/about/`}>
-            {"About"}
-          </a>
-          {" "}
-          <a className="nav__link" style={{ "--i": "4" }} href={`${BASE_PATH}/contact/`}>
-            {"Contact"}
-          </a>
-          {" "}
-        </nav>
-        {" "}
-        <div className="wrap navpanel__foot">
-          {" "}
-          <div className="navpanel__contact">
-            {" "}
-            <a href="tel:+61421258240">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" />
-              </svg>
-              {" 0421 258 240"}
-            </a>
-            {" "}
-            <a href="mailto:stefan@santalana.com.au">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-                <rect x="2" y="4" width="20" height="16" rx="2" />
-                <path d="m2 7 10 6 10-6" />
-              </svg>
-              {" stefan@santalana.com.au"}
-            </a>
-            {" "}
-          </div>
-          {" "}
-          <a className="btn btn--light btn--wide" href={`${BASE_PATH}/contact/`}>
-            {"Request a consultation"}
-            <svg className="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-              <path d="M7 17 17 7M8 7h9v9" />
-            </svg>
-          </a>
-          {" "}
-        </div>
-        {" "}
-      </div>
+      <SiteHeader current="projects" />
       {" "}
       <main id="main">
         {" "}
@@ -219,25 +73,7 @@ export default function ProjectsPage() {
         {/* Registration detail. Sits in the utility strip on desktop; on a phone that
            bar is too crowded, so it reappears here under the hero instead. */}
         {" "}
-        <aside className="licence-strip">
-          {" "}
-          <div className="wrap">
-            {" "}
-            <span>
-              {"Registered Building Practitioner"}
-            </span>
-            {" "}
-            <span>
-              {"DB-U 100456  /  CB-U 100040"}
-            </span>
-            {" "}
-            <span>
-              {"$20M public liability"}
-            </span>
-            {" "}
-          </div>
-          {" "}
-        </aside>
+        <LicenceStrip />
         {" "}
         <section className="statbar" aria-label="Portfolio at a glance">
           {" "}
@@ -1182,222 +1018,12 @@ export default function ProjectsPage() {
         {" "}
       </main>
       {" "}
-      <footer className="site-footer">
-        {" "}
-        <div className="wrap">
-          {" "}
-          <div className="site-footer__grid">
-            {" "}
-            <div className="footer-brand">
-              {" "}
-              <img src={asset("/assets/img/brand/logo-white.png")} alt="Santa'lana Builders" width="2001" height="833" loading="lazy" />
-              {" "}
-              <p>
-                {"Domestic and commercial builders delivering high end residential projects across Melbourne and Victoria."}
-              </p>
-              {" "}
-              <div className="footer-social">
-                {" "}
-                <a href="https://www.instagram.com/santalanabuilders/" target="_blank" rel="noopener noreferrer" aria-label="Santa'lana Builders on Instagram">
-                  {" "}
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-                  </svg>
-                  {" "}
-                </a>
-                {" "}
-                <a href="tel:+61421258240" aria-label="Call Santa'lana Builders">
-                  {" "}
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                    <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" />
-                  </svg>
-                  {" "}
-                </a>
-                {" "}
-                <a href="mailto:stefan@santalana.com.au" aria-label="Email Santa'lana Builders">
-                  {" "}
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-                    <rect x="2" y="4" width="20" height="16" rx="2" />
-                    <path d="m2 7 10 6 10-6" />
-                  </svg>
-                  {" "}
-                </a>
-                {" "}
-              </div>
-              {" "}
-            </div>
-            {" "}
-            <div>
-              {" "}
-              <h4>
-                {"Explore"}
-              </h4>
-              {" "}
-              <ul>
-                {" "}
-                <li>
-                  <a href={`${BASE_PATH}/`}>
-                    {"Home"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  <a href={`${BASE_PATH}/projects/`}>
-                    {"Projects"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  <a href={`${BASE_PATH}/services/`}>
-                    {"Services"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  <a href={`${BASE_PATH}/about/`}>
-                    {"About"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  <a href={`${BASE_PATH}/contact/`}>
-                    {"Contact"}
-                  </a>
-                </li>
-                {" "}
-              </ul>
-              {" "}
-            </div>
-            {" "}
-            <div>
-              {" "}
-              <h4>
-                {"Projects"}
-              </h4>
-              {" "}
-              <ul>
-                {" "}
-                <li>
-                  <a href="#brighton">
-                    {"Brighton"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  <a href="#mornington">
-                    {"Mornington"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  <a href="#aberfeldie">
-                    {"Aberfeldie"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  <a href="#strathmore">
-                    {"Strathmore"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  <a href="#rosebud">
-                    {"Rosebud"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  <a href="#ascot-vale">
-                    {"Ascot Vale"}
-                  </a>
-                </li>
-                {" "}
-              </ul>
-              {" "}
-            </div>
-            {" "}
-            <div>
-              {" "}
-              <h4>
-                {"Contact"}
-              </h4>
-              {" "}
-              <ul>
-                {" "}
-                <li>
-                  <a href="tel:+61421258240">
-                    {"0421 258 240"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  <a href="mailto:stefan@santalana.com.au">
-                    {"stefan@santalana.com.au"}
-                  </a>
-                </li>
-                {" "}
-                <li>
-                  {"12 Nelson Place"}
-                  <br />
-                  {"South Melbourne VIC 3205"}
-                </li>
-                {" "}
-                <li>
-                  <a href="https://www.instagram.com/santalanabuilders/" target="_blank" rel="noopener noreferrer">
-                    {"@santalanabuilders"}
-                  </a>
-                </li>
-                {" "}
-              </ul>
-              {" "}
-            </div>
-            {" "}
-          </div>
-          {" "}
-          <div className="site-footer__base">
-            {" "}
-            <p>
-              {"© "}
-              <span id="year">
-                {"2026"}
-              </span>
-              {" Santa'lana Builders. All rights reserved."}
-            </p>
-            {" "}
-            <p className="licence-line">
-              {"DB-U 100456  /  CB-U 100040  /  $20M public liability"}
-            </p>
-            {" "}
-          </div>
-          {" "}
-        </div>
-        {" "}
-      </footer>
+      <SiteFooter />
       {" "}
       {/* Floating dock: call and consultation are the two actions that matter for a
          builder, plus the theme control. Becomes a bottom bar on a phone. */}
       {" "}
-      <div className="dock">
-        {" "}
-        <a className="dock__btn dock__btn--call" href="tel:+61421258240">
-          {" "}
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
-            <path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.2-1.2a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z" />
-          </svg>
-          {" Call "}
-        </a>
-        {" "}
-        <a className="dock__btn dock__btn--quote" href={`${BASE_PATH}/contact/`}>
-          {" Consultation "}
-          <svg className="btn__arrow" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-            <path d="M7 17 17 7M8 7h9v9" />
-          </svg>
-        </a>
-        {" "}
-      </div>
+      <Dock />
       {" "}
       {" "}
     </>
