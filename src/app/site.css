@@ -2082,11 +2082,48 @@ form[data-autoadvance] [data-next] { display: none; }
     flex-direction: column;
     flex: 1;
   }
-  /* Buttons settle at the bottom whichever step is showing. */
-  .hero .enquiry .fnav { margin-top: auto; }
+  /* No auto margin here: an auto margin absorbs the free space before
+     flex-grow gets a look at it, which left the option tiles at their content
+     height with dead space underneath. The growing step pushes the buttons
+     down instead. */
+  .hero .enquiry .fnav { margin-top: 4px; }
 
   /* A little more room in the tiles now that there is space for it. */
   .hero .choices--compact { gap: 8px; }
   .hero .choices--compact .choice { padding: 12px 13px; }
   .hero .choices--compact .choice__title { font-size: 14px; }
+}
+
+/* Desktop hero panel: let the option tiles grow into the panel height rather
+   than leaving dead space under them. The step, the fieldset and the grid all
+   stretch, and grid-auto-rows: 1fr shares the height between the tile rows. */
+@media (min-width: 1041px) {
+  .hero .enquiry .fstep.is-active {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+  .hero .enquiry .fieldset {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin-bottom: 0;
+  }
+  .hero .choices--compact { gap: 10px; }
+  .hero .choices--compact .choice {
+    align-content: center;
+    padding: 12px 15px;
+  }
+  /* Explicit row heights rather than flex distribution: the fieldset does not
+     pass a definite height down to the grid, so the tiles were staying at
+     content height and leaving dead space above the buttons. Step one has
+     three rows, step two has two, so they are sized separately to fill the
+     same panel. */
+  .hero .fstep[data-step="1"] .choice { min-height: 72px; }
+  .hero .fstep[data-step="2"] .choice { min-height: 88px; }
+  /* Bigger icon now that the tile has room for it. */
+  .hero .choices--compact .choice > svg { width: 24px; height: 24px; }
+  .hero .choices--compact .choice__title { font-size: 14.5px; }
+
+  .hero .enquiry .enquiry__fine { margin-top: 16px; }
 }

@@ -278,6 +278,11 @@ export default function HomePage() {
                 {" "}
                 <p className="fstatus" data-fstatus="" aria-live="polite" />
                 {" "}
+                <p className="enquiry__fine">
+                  We reply to every enquiry within one business day. Your details stay with
+                  Santa&rsquo;lana Builders.
+                </p>
+                {" "}
                 <div className="fnav">
                   {" "}
                   <button className="btn btn--quiet" type="button" data-back="" hidden>
