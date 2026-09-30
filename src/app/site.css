@@ -1849,3 +1849,20 @@ section[id], #enquire { scroll-margin-top: 100px; }
   color: var(--ink);
 }
 .section--dark .areas li:has(a):hover { border-color: #fff; color: #fff; }
+
+/* Compact tiles for the hero panel: titles only, so six of them take about the
+   same height the single select did and the form still does not drive the
+   height of the hero. */
+.choices--compact { gap: 6px; }
+.choices--compact .choice {
+  padding: 10px 12px;
+  gap: 0;
+}
+.choices--compact .choice__title { font-size: 13.5px; }
+.choices--compact .choice__note { display: none; }
+
+/* Compact tile labels are short enough to hold two columns on a phone, which
+   keeps the hero panel about half the height stacking would give it. */
+@media (max-width: 420px) {
+  .choices--compact { grid-template-columns: 1fr 1fr; }
+}

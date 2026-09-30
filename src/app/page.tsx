@@ -175,42 +175,35 @@ export default function HomePage() {
                 {" "}
                 <div className="fstep" data-step="1" data-title="Project">
                   {" "}
-                  <div className="field">
-                    {" "}
-                    <label htmlFor="f-interest">
-                      {"What can we help with?"}
-                    </label>
-                    {" "}
-                    <div className="select-wrap">
-                      {" "}
-                      <select id="f-interest" name="interest" required defaultValue="">
-                        <option value="" disabled>
-                          {"Select an option"}
-                        </option>
-                        <option>
-                          {"New home or custom build"}
-                        </option>
-                        <option>
-                          {"Duplex or multi-dwelling development"}
-                        </option>
-                        <option>
-                          {"Renovation and extension"}
-                        </option>
-                        <option>
-                          {"Office or shop fit-out"}
-                        </option>
-                        <option>
-                          {"Design and build"}
-                        </option>
-                        <option>
-                          {"Something else"}
-                        </option>
-                      </select>
-                      {" "}
+                  <fieldset className="field fieldset">
+                    <legend>What are you building?</legend>
+                    <div className="choices choices--compact">
+                      <input className="choice__input" type="radio" id="f-i-new-home" name="interest" value="New home" required />
+                      <label className="choice" htmlFor="f-i-new-home">
+                        <span className="choice__title">New home</span>
+                      </label>
+                      <input className="choice__input" type="radio" id="f-i-duplex" name="interest" value="Duplex" required />
+                      <label className="choice" htmlFor="f-i-duplex">
+                        <span className="choice__title">Duplex</span>
+                      </label>
+                      <input className="choice__input" type="radio" id="f-i-renovation" name="interest" value="Renovation" required />
+                      <label className="choice" htmlFor="f-i-renovation">
+                        <span className="choice__title">Renovation</span>
+                      </label>
+                      <input className="choice__input" type="radio" id="f-i-fit-out" name="interest" value="Fit-out" required />
+                      <label className="choice" htmlFor="f-i-fit-out">
+                        <span className="choice__title">Fit-out</span>
+                      </label>
+                      <input className="choice__input" type="radio" id="f-i-design-build" name="interest" value="Design &amp; build" required />
+                      <label className="choice" htmlFor="f-i-design-build">
+                        <span className="choice__title">Design &amp; build</span>
+                      </label>
+                      <input className="choice__input" type="radio" id="f-i-other" name="interest" value="Something else" required />
+                      <label className="choice" htmlFor="f-i-other">
+                        <span className="choice__title">Something else</span>
+                      </label>
                     </div>
-                    {" "}
-                  </div>
-                  {" "}
+                  </fieldset>
                   <div className="field">
                     {" "}
                     <label htmlFor="f-suburb">
