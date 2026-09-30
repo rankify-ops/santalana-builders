@@ -1081,6 +1081,11 @@ h1, h2, h3, h4 {
   flex: none;
 }
 .creds__list .v { color: var(--ink); font-weight: 500; text-align: right; }
+/* Phone, email and Instagram in the contact list are 19px links, so on a phone
+   they take vertical padding to clear the 24px minimum target. */
+@media (max-width: 1040px) {
+  .creds__list .v a { display: inline-block; padding-block: 4px; }
+}
 
 /* ==========================================================================
    Areas we build
@@ -1154,6 +1159,13 @@ h1, h2, h3, h4 {
   margin-bottom: 18px;
 }
 .site-footer ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 11px; }
+/* Footer links are 18px of text, under the 24px minimum target size, so on a
+   phone they take vertical padding and the list gives back the matching gap.
+   The spacing reads the same; the tappable box is 28px instead of 18px. */
+@media (max-width: 1040px) {
+  .site-footer ul { gap: 1px; }
+  .site-footer li > a { display: inline-block; padding-block: 5px; }
+}
 .site-footer a { transition: color var(--t-fast); }
 .site-footer a:hover { color: #fff; }
 .footer-brand img { height: 46px; width: auto; margin-bottom: 20px; }
@@ -1215,6 +1227,12 @@ h1, h2, h3, h4 {
   margin-bottom: 20px;
 }
 .crumbs a:hover { color: #fff; }
+/* 11px uppercase text is an 18px target, under the 24px minimum, so the links
+   take vertical padding on a phone. The separator is an inline ::before inside
+   the link, so it rides along and the row just grows a few pixels. */
+@media (max-width: 1040px) {
+  .crumbs a { padding-block: 4px; }
+}
 .crumbs span::before { content: "/"; margin-right: 10px; opacity: .6; }
 
 /* ==========================================================================
@@ -1852,8 +1870,13 @@ section[id], #enquire { scroll-margin-top: 100px; }
   border-top-color: rgba(255,255,255,.18);
 }
 
-/* The "other services" pills are links here rather than plain labels. */
+/* The "other services" pills are links here rather than plain labels. The
+   padding sits on the li, so a link inside it was only 20px of tappable text
+   in a 38px pill. When the li holds a link, the padding moves to the link and
+   the whole pill becomes the target. */
 .areas li a { display: block; }
+.areas li:has(a) { padding: 0; }
+.areas li:has(a) > a { padding: 9px 16px; }
 .areas li:has(a):hover {
   border-color: var(--ink);
   color: var(--ink);

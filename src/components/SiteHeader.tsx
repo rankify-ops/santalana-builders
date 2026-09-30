@@ -134,7 +134,7 @@ export function SiteHeader({ current, ctaHref }: { current?: NavKey; ctaHref?: s
               0421 258 240
             </a>
             <a className="btn btn--solid" href={cta}>
-              Start your build
+              Get in touch
               <ArrowUpRight />
             </a>
             <button

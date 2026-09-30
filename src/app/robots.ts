@@ -7,7 +7,7 @@ const SITE = "https://www.santalana.com.au";
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [{ userAgent: "*", allow: "/", disallow: ["/staff-153de3/"] }],
+    rules: [{ userAgent: "*", allow: "/" }],
     sitemap: `${SITE}/sitemap.xml`,
   };
 }
