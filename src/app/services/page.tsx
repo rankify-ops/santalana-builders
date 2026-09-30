@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { BASE_PATH, asset } from "@/lib/basePath";
 import { ArrowUpRight } from "@/components/icons";
+import { ServiceIcon } from "@/components/ServiceIcon";
 import { breadcrumb, jsonLd, servicesItemList, SITE } from "@/lib/schema";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
@@ -77,6 +78,7 @@ export default function ServicesPage() {
             {" "}
             <div className="reveal">
               {" "}
+              <div className="card__icon"><ServiceIcon slug="new-homes" /></div>
               <p className="eyebrow">
                 {"Service 01"}
               </p>
@@ -152,6 +154,7 @@ export default function ServicesPage() {
             {" "}
             <div className="reveal" style={{ "--d": "100ms" }}>
               {" "}
+              <div className="card__icon"><ServiceIcon slug="duplex" /></div>
               <p className="eyebrow">
                 {"Service 02"}
               </p>
@@ -215,6 +218,7 @@ export default function ServicesPage() {
             {" "}
             <div className="reveal">
               {" "}
+              <div className="card__icon"><ServiceIcon slug="renovations" /></div>
               <p className="eyebrow">
                 {"Service 03"}
               </p>
@@ -304,6 +308,7 @@ export default function ServicesPage() {
             {" "}
             <div className="reveal" style={{ "--d": "100ms" }}>
               {" "}
+              <div className="card__icon"><ServiceIcon slug="commercial" /></div>
               <p className="eyebrow">
                 {"Service 04"}
               </p>
@@ -367,6 +372,7 @@ export default function ServicesPage() {
             {" "}
             <div className="reveal">
               {" "}
+              <div className="card__icon"><ServiceIcon slug="design-build" /></div>
               <p className="eyebrow">
                 {"Service 05"}
               </p>
@@ -436,6 +442,7 @@ export default function ServicesPage() {
             {" "}
             <div className="section-head reveal">
               {" "}
+              <div className="card__icon"><ServiceIcon slug="project-management" /></div>
               <p className="eyebrow">
                 {"Service 06"}
               </p>

@@ -1866,3 +1866,11 @@ section[id], #enquire { scroll-margin-top: 100px; }
 @media (max-width: 420px) {
   .choices--compact { grid-template-columns: 1fr 1fr; }
 }
+
+/* Service icon in a page hero, above the H1. */
+.pagehero__icon {
+  color: #fff;
+  margin-bottom: 18px;
+  opacity: .9;
+}
+.pagehero__icon svg { width: 46px; height: 46px; }

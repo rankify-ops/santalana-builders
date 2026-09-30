@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { BASE_PATH, asset } from "@/lib/basePath";
+import { ServiceIcon } from "@/components/ServiceIcon";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { Dock } from "@/components/Dock";
@@ -460,14 +461,8 @@ export default function HomePage() {
               <article className="card">
                 {" "}
                 <div className="card__icon">
-                  {" "}
-                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                    <path d="M6 22 24 8l18 14" />
-                    <path d="M10 20v18h28V20" />
-                    <path d="M20 38V27h8v11" />
-                  </svg>
-                  {" "}
-                </div>
+                    <ServiceIcon slug="new-homes" />
+                  </div>
                 {" "}
                 <h3>
                   {"New homes & custom builds"}
@@ -503,15 +498,8 @@ export default function HomePage() {
               <article className="card">
                 {" "}
                 <div className="card__icon">
-                  {" "}
-                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                    <path d="M6 40V16l10-8 10 8v24" />
-                    <path d="M26 40V22l8-6 8 6v18" />
-                    <path d="M13 40v-9h6v9" />
-                    <path d="M33 40v-8h6v8" />
-                  </svg>
-                  {" "}
-                </div>
+                    <ServiceIcon slug="duplex" />
+                  </div>
                 {" "}
                 <h3>
                   {"Duplex & multi-dwelling"}
@@ -547,14 +535,8 @@ export default function HomePage() {
               <article className="card">
                 {" "}
                 <div className="card__icon">
-                  {" "}
-                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                    <path d="M8 40V12h20v28" />
-                    <path d="M28 24h12v16H28" />
-                    <path d="M14 20h8M14 28h8M34 32h2" />
-                  </svg>
-                  {" "}
-                </div>
+                    <ServiceIcon slug="renovations" />
+                  </div>
                 {" "}
                 <h3>
                   {"Renovations & extensions"}
@@ -590,15 +572,8 @@ export default function HomePage() {
               <article className="card">
                 {" "}
                 <div className="card__icon">
-                  {" "}
-                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                    <path d="M6 40h36" />
-                    <path d="M10 40V14h28v26" />
-                    <path d="M17 22h6v6h-6zM25 22h6v6h-6z" />
-                    <path d="M21 40v-6h6v6" />
-                  </svg>
-                  {" "}
-                </div>
+                    <ServiceIcon slug="commercial" />
+                  </div>
                 {" "}
                 <h3>
                   {"Office & shop fit-outs"}
@@ -634,14 +609,8 @@ export default function HomePage() {
               <article className="card">
                 {" "}
                 <div className="card__icon">
-                  {" "}
-                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                    <path d="M10 6h20l8 8v28H10z" />
-                    <path d="M30 6v8h8" />
-                    <path d="M17 24h14M17 31h14" />
-                  </svg>
-                  {" "}
-                </div>
+                    <ServiceIcon slug="design-build" />
+                  </div>
                 {" "}
                 <h3>
                   {"Design & build"}
@@ -677,14 +646,8 @@ export default function HomePage() {
               <article className="card">
                 {" "}
                 <div className="card__icon">
-                  {" "}
-                  <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
-                    <path d="M24 6v6M24 36v6M6 24h6M36 24h6" />
-                    <circle cx="24" cy="24" r="11" />
-                    <path d="m20 24 3 3 6-6" />
-                  </svg>
-                  {" "}
-                </div>
+                    <ServiceIcon slug="project-management" />
+                  </div>
                 {" "}
                 <h3>
                   {"Project management"}
