@@ -172,7 +172,7 @@ export default function HomePage() {
                 {" "}
               </div>
               {" "}
-              <form id="enquiryForm" noValidate>
+              <form id="enquiryForm" data-autoadvance="" noValidate>
                 {" "}
                 <div className="fstep" data-step="1" data-title="Project">
                   {" "}
@@ -211,15 +211,6 @@ export default function HomePage() {
                       </label>
                     </div>
                   </fieldset>
-                  <div className="field">
-                    {" "}
-                    <label htmlFor="f-suburb">
-                      {"Project suburb"}
-                    </label>
-                    {" "}
-                    <input id="f-suburb" name="suburb" type="text" placeholder="e.g. Brighton" />
-                    {" "}
-                  </div>
                   {" "}
                 </div>
                 {" "}

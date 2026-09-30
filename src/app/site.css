@@ -2058,3 +2058,9 @@ section[id], #enquire { scroll-margin-top: 100px; }
 }
 .navpanel__sub a:hover { color: #fff; }
 .navpanel__sub svg { flex: none; opacity: .8; }
+
+/* Hero form: step one is the choice tiles alone and picking one advances, so
+   Continue has nothing to do. It stays in the DOM because site-behaviour.js
+   needs it to wire the stages up, and it is never the visible action anyway:
+   on the last stage the script swaps it for Send enquiry. */
+form[data-autoadvance] [data-next] { display: none; }
