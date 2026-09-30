@@ -8,7 +8,6 @@ import { LicenceStrip } from "@/components/LicenceStrip";
 import { Dock } from "@/components/Dock";
 import { EnquiryForm } from "@/components/EnquiryForm";
 import { ArrowUpRight, Award, Check, Shield } from "@/components/icons";
-import { ServiceIcon } from "@/components/ServiceIcon";
 
 const SITE = "https://www.santalana.com.au";
 
@@ -134,12 +133,7 @@ export default async function ServicePage({ params }: { params: Promise<Params> 
               <a href={`${BASE_PATH}/services/`}>Services</a>
               <span>{service.navLabel}</span>
             </nav>
-            <div className="pagehero__head">
-              <div className="pagehero__icon">
-                <ServiceIcon slug={service.slug} size={44} />
-              </div>
-              <h1>{service.h1}</h1>
-            </div>
+            <h1>{service.h1}</h1>
             <p>{service.intro}</p>
 
             <div className="stack-cta">

@@ -1215,8 +1215,12 @@ h1, h2, h3, h4 {
   position: absolute; inset: 0;
   background: linear-gradient(to right, rgba(6,7,8,.9) 0%, rgba(6,7,8,.62) 55%, rgba(6,7,8,.45) 100%);
 }
-.pagehero__inner { position: relative; padding-block: clamp(64px, 9vw, 132px); max-width: 780px; }
-.pagehero h1 { color: #fff; font-size: clamp(2.3rem, 4.9vw, 3.95rem); font-weight: 500; letter-spacing: -.035em; }
+/* The inner block is a .wrap, so it must keep the wrap's 1280px max-width:
+   a narrower max-width here fights the auto margins and centres the whole
+   column in the viewport instead of leaving it on the page's left gutter,
+   under the logo. Limit the measure on the text itself instead. */
+.pagehero__inner { position: relative; padding-block: clamp(64px, 9vw, 132px); }
+.pagehero h1 { color: #fff; font-size: clamp(2.3rem, 4.9vw, 3.95rem); font-weight: 500; letter-spacing: -.035em; max-width: 19ch; }
 .pagehero p { color: rgba(255,255,255,.8); margin: 22px 0 0; font-size: clamp(1rem, 1.3vw, 1.15rem); line-height: 1.7; max-width: 58ch; }
 
 .crumbs {
@@ -1900,14 +1904,6 @@ section[id], #enquire { scroll-margin-top: 100px; }
   .choices--compact { grid-template-columns: 1fr 1fr; }
 }
 
-/* Service icon in a page hero, above the H1. */
-.pagehero__icon {
-  color: #fff;
-  margin-bottom: 18px;
-  opacity: .9;
-}
-.pagehero__icon svg { width: 46px; height: 46px; }
-
 /* Choice tiles carry the service icon beside the label. The icon sits on its
    own row on the full tiles (which also show a note) and inline on the compact
    hero tiles, so those stay one line tall and the form does not grow the hero. */
@@ -1955,14 +1951,6 @@ section[id], #enquire { scroll-margin-top: 100px; }
 }
 .card__head .card__icon { margin-bottom: 0; flex: none; }
 .card__head h3 { margin: 0; }
-
-/* Page hero icon sits beside the H1. */
-.pagehero__head {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.pagehero__head .pagehero__icon { margin-bottom: 0; flex: none; }
 
 /* ==========================================================================
    Services submenu
